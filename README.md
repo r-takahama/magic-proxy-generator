@@ -11,7 +11,9 @@ Magic: the Gatheringの[プロキシ(Proxy)](http://mtgwiki.com/wiki/%E3%83%97%E
 - [テーロス](http://mtgwiki.com/wiki/%E3%83%86%E3%83%BC%E3%83%AD%E3%82%B9) / Theros / THS
 - [神々の軍勢](http://mtgwiki.com/wiki/%E7%A5%9E%E3%80%85%E3%81%AE%E8%BB%8D%E5%8B%A2) / Born of the Gods / BNG
 - [ニクスへの旅](http://mtgwiki.com/wiki/%E3%83%8B%E3%82%AF%E3%82%B9%E3%81%B8%E3%81%AE%E6%97%85) / Journey into Nyx / JOU
+
 ##### [基本セット2015](http://mtgwiki.com/wiki/%E5%9F%BA%E6%9C%AC%E3%82%BB%E3%83%83%E3%83%882015) / Magic Core Set 2015 / M15
+
 ##### [タルキール覇王譚ブロック](http://mtgwiki.com/wiki/タルキール覇王譚ブロック)
 - [タルキール覇王譚](http://mtgwiki.com/wiki/タルキール覇王譚) / Khans of Tarkir / KTK
 	
@@ -48,9 +50,9 @@ MagicProxyPrinter
 │	│			284.jpg
 │	│
 │	└─THS
-│				  000.jpg
-│				  ...
-│				  249.jpg
+│				000.jpg
+│				...
+│				249.jpg
 │
 ├─output
 │			
