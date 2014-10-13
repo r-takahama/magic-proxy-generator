@@ -3,6 +3,8 @@ import csv
 import re
 import subprocess
 import sys
+import urllib.request
+import io
 
 # Input:
 #     deckListPath: デッキリスト(MO形式, .txt)へのパス
@@ -73,6 +75,8 @@ for cardName in cardNameList:
 # 複数枚印刷されるカードについては，その分だけパスを発行する．無駄？
 cardImgPathList = []
 for oneCard in cardList:
+	imgPath = '../img/'
+	# imgPath = 'http://ceacle.main.jp/MagicProxyPrinter/img/'
 	expansion = oneCard[0]
 	colNumber = "{0:03d}".format(int(oneCard[1]))
 	cardName = oneCard[2]
@@ -82,7 +86,7 @@ for oneCard in cardList:
 			extension = '.png'
 		else:
 			extension = '.jpg'
-		cardImgPathList.append('../img/' + expansion + '/' + colNumber + extension)
+		cardImgPathList.append(imgPath + expansion + '/' + colNumber + extension)
 	print('print', cardNum, cardName.replace('+', ' '), ':', colNumber, 'of', expansion)
 
 # 上で発行されたパスのリストに対して，それらを全て出力する．
@@ -105,6 +109,7 @@ while len(cardImgPathList) > 0:
 		break;
 	cardImgPath = cardImgPathList.pop(0)
 	img = Image.open(cardImgPath, 'r')
+	# img = Image.open(io.BytesIO(urllib.request.urlopen(cardImgPath).read()))
 	img = img.resize((cardWidth, cardHeight))
 	canvas.paste(img, (margin * 1 + cardWidth * 0, margin * 1 + cardHeight * 0))
 
@@ -114,6 +119,7 @@ while len(cardImgPathList) > 0:
 		break;
 	cardImgPath = cardImgPathList.pop(0)
 	img = Image.open(cardImgPath, 'r')
+	# img = Image.open(io.BytesIO(urllib.request.urlopen(cardImgPath).read()))
 	img = img.resize((cardWidth, cardHeight))
 	canvas.paste(img, (margin * 2 + cardWidth * 1, margin * 1 + cardHeight * 0))
 
@@ -123,6 +129,7 @@ while len(cardImgPathList) > 0:
 		break;
 	cardImgPath = cardImgPathList.pop(0)
 	img = Image.open(cardImgPath, 'r')
+	# img = Image.open(io.BytesIO(urllib.request.urlopen(cardImgPath).read()))
 	img = img.resize((cardWidth, cardHeight))
 	canvas.paste(img, (margin * 3 + cardWidth * 2, margin * 1 + cardHeight * 0))
 
@@ -132,6 +139,7 @@ while len(cardImgPathList) > 0:
 		break;
 	cardImgPath = cardImgPathList.pop(0)
 	img = Image.open(cardImgPath, 'r')
+	# img = Image.open(io.BytesIO(urllib.request.urlopen(cardImgPath).read()))
 	img = img.resize((cardWidth, cardHeight))
 	canvas.paste(img, (margin * 1 + cardWidth * 0, margin * 2 + cardHeight * 1))
 
@@ -141,6 +149,7 @@ while len(cardImgPathList) > 0:
 		break;
 	cardImgPath = cardImgPathList.pop(0)
 	img = Image.open(cardImgPath, 'r')
+	# img = Image.open(io.BytesIO(urllib.request.urlopen(cardImgPath).read()))
 	img = img.resize((cardWidth, cardHeight))
 	canvas.paste(img, (margin * 2 + cardWidth * 1, margin * 2 + cardHeight * 1))
 
@@ -150,6 +159,7 @@ while len(cardImgPathList) > 0:
 		break;
 	cardImgPath = cardImgPathList.pop(0)
 	img = Image.open(cardImgPath, 'r')
+	# img = Image.open(io.BytesIO(urllib.request.urlopen(cardImgPath).read()))
 	img = img.resize((cardWidth, cardHeight))
 	canvas.paste(img, (margin * 3 + cardWidth * 2, margin * 2 + cardHeight * 1))
 
@@ -159,6 +169,7 @@ while len(cardImgPathList) > 0:
 		break;
 	cardImgPath = cardImgPathList.pop(0)
 	img = Image.open(cardImgPath, 'r')
+	# img = Image.open(io.BytesIO(urllib.request.urlopen(cardImgPath).read()))
 	img = img.resize((cardWidth, cardHeight))
 	canvas.paste(img, (margin * 1 + cardWidth * 0, margin * 3 + cardHeight * 2))
 
@@ -168,6 +179,7 @@ while len(cardImgPathList) > 0:
 		break;
 	cardImgPath = cardImgPathList.pop(0)
 	img = Image.open(cardImgPath, 'r')
+	# img = Image.open(io.BytesIO(urllib.request.urlopen(cardImgPath).read()))
 	img = img.resize((cardWidth, cardHeight))
 	canvas.paste(img, (margin * 2 + cardWidth * 1, margin * 3 + cardHeight * 2))
 
@@ -177,6 +189,7 @@ while len(cardImgPathList) > 0:
 		break;
 	cardImgPath = cardImgPathList.pop(0)
 	img = Image.open(cardImgPath, 'r')
+	# img = Image.open(io.BytesIO(urllib.request.urlopen(cardImgPath).read()))
 	img = img.resize((cardWidth, cardHeight))
 	canvas.paste(img, (margin * 3 + cardWidth * 2, margin * 3 + cardHeight * 2))
 
