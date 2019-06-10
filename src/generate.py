@@ -99,6 +99,7 @@ def get_image_object_from_cardname(cardname: str) -> Image:
 
     # 分割カードの場合は90度左に回転したものを印刷リストに入れる
     if '//' in cardname:
+        image = image.resize((image.width, image.width))
         image = image.rotate(90)
 
     return image.resize((CARD_WIDTH, CARD_HEIGHT))
