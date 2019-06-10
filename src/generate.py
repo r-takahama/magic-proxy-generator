@@ -57,6 +57,7 @@ DOUBLE_FACED_DICT = {
     "Storm the Vault": "Vault of Catlacan",
     "Azor's Gateway": "Sanctum of the Sun",
     "Golden Guardian": "Gold-Forge Garrison",
+    "Nicol Bolas, the Ravager": "Nicol Bolas, the Arisen",
 }
 
 
